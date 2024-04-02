@@ -1,10 +1,11 @@
 import Head from "next/head";
-import Link from "next/link";
-
 import styles from "./index.module.css";
 import { env } from "~/env";
+import { Button } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -15,31 +16,15 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>{env.NEXT_PUBLIC_BACKEND_BASE_URL}</h1>
-          <div className={styles.cardRow}>
-            <Link
-              className={styles.card}
-              href="https://create.t3.gg/en/usage/first-steps"
-              target="_blank"
-            >
-              <h3 className={styles.cardTitle}>First Steps →</h3>
-              <div className={styles.cardText}>
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
-              </div>
-            </Link>
-            <Link
-              className={styles.card}
-              href="https://create.t3.gg/en/introduction"
-              target="_blank"
-            >
-              <h3 className={styles.cardTitle}>Documentation →</h3>
-              <div className={styles.cardText}>
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
-              </div>
-            </Link>
-          </div>
         </div>
+        <Button
+          colorScheme="blue"
+          onClick={() => {
+            router.push("/login");
+          }}
+        >
+          Button
+        </Button>
       </main>
     </>
   );
