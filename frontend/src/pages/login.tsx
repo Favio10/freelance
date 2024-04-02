@@ -20,7 +20,7 @@ const Login: NextPage = () => {
       <Card padding={3}>
         <form>
           <FormControl marginBottom={5}>
-            <FormLabel>Email address</FormLabel>
+            <FormLabel>Email addresss</FormLabel>
             <Input
               type="text"
               placeholder="Ingresa tu email"
@@ -38,10 +38,10 @@ const Login: NextPage = () => {
             />
           </FormControl>
           <ButtonGroup marginTop={8}>
-            <Button
-              onClick={() => console.log({ Values: getValues() })}
-            >Iniciar sesion</Button>
-             <Button>Quiero un codigo</Button>
+            <Button onClick={() => console.log({ Values: getValues() })}>
+              Iniciar sesion
+            </Button>
+            <Button>Quiero un codigo</Button>
           </ButtonGroup>
         </form>
       </Card>
